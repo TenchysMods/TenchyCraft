@@ -3,6 +3,8 @@ package me.TenchysMods.TenchyCraft;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import me.TenchysMods.TenchyCraft.block.BlueDiamondBlock;
 import me.TenchysMods.TenchyCraft.item.GemItems;
 import me.TenchysMods.TenchyCraft.tabs.TabTCGems;
 import cpw.mods.fml.common.Mod;
@@ -32,6 +34,10 @@ public class TenchyCraft {
 		LanguageRegistry.addName(blueDiamondBlock, "Blue Diamond Block");
 	}
 	
+	public static void loaderCrafting() {
+		GameRegistry.addRecipe(new ItemStack(blueDiamondBlock, 1), new Object[]{"ddd", "ddd", "ddd", 'd', blueDiamond});
+	}
+	
 	public static CreativeTabs tabTCGems = new TabTCGems(CreativeTabs.getNextID(), "TenchyCraft Gems");
 	
 	// SidedProxy code, required by forge.
@@ -43,6 +49,7 @@ public class TenchyCraft {
 		proxy.registerRenderers();
 		loaderItem();
 		loaderBlock();
+		loaderCrafting();
 	}
 	
 }
