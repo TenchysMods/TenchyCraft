@@ -20,12 +20,16 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class TenchyCraft {
 	
 	public static Item blueDiamond;
+	public static Item blueStone;
 	
 	public static Block blueDiamondBlock;
 	
 	public static void loaderItem() {
 		blueDiamond = new GemItems(701).setUnlocalizedName("blueDiamond");
 		LanguageRegistry.addName(blueDiamond, "Blue Diamond");
+		
+		blueStone = new GemItems(702).setUnlocalizedName("blueStone");
+		LanguageRegistry.addName(blueStone, "Bluestone");
 	}
 	
 	public static void loaderBlock() {
@@ -36,6 +40,8 @@ public class TenchyCraft {
 	
 	public static void loaderCrafting() {
 		GameRegistry.addRecipe(new ItemStack(blueDiamondBlock, 1), new Object[]{"ddd", "ddd", "ddd", 'd', blueDiamond});
+		GameRegistry.addRecipe(new ItemStack(blueDiamond, 1), new Object[]{"sss", "sds", "sss", 's', blueStone, 'd', Item.diamond});
+		GameRegistry.addShapelessRecipe(new ItemStack(blueStone, 2), new Object[]{Item.redstone, Block.ice});
 	}
 	
 	public static CreativeTabs tabTCGems = new TabTCGems(CreativeTabs.getNextID(), "TenchyCraft Gems");
