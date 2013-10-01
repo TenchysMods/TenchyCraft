@@ -2,12 +2,18 @@ package me.TenchysMods.TenchyCraft;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import me.TenchysMods.TenchyCraft.block.BlueDiamondBlock;
 import me.TenchysMods.TenchyCraft.block.WhiteBlock;
 import me.TenchysMods.TenchyCraft.item.GemItems;
 import me.TenchysMods.TenchyCraft.tabs.TabTCGems;
+import me.TenchysMods.TenchyCraft.tools.ShinyAxe;
+import me.TenchysMods.TenchyCraft.tools.ShinyHoe;
+import me.TenchysMods.TenchyCraft.tools.ShinyPickaxe;
+import me.TenchysMods.TenchyCraft.tools.ShinyShovel;
+import me.TenchysMods.TenchyCraft.tools.ShinySword;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init; 
 import cpw.mods.fml.common.SidedProxy;
@@ -16,13 +22,21 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "tenchycraft2", name = "TenchyCraft", version = "2")
+@Mod(modid = "tenchycraft2", name = "TenchyCraft", version = "pre02a")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class TenchyCraft {
+	
+	static EnumToolMaterial shiny = net.minecraftforge.common.EnumHelper.addToolMaterial("HighPower", 2, 9000, 9.0F, 6, 15);
 	
 	public static Item blueDiamond;
 	public static Item blueStone;
 	public static Item shinyIngot;
+	
+	public static Item shinyPickaxe;
+	public static Item shinyShovel;
+	public static Item shinyAxe;
+	public static Item shinySword;
+	public static Item shinyHoe;
 	
 	public static Block blueDiamondBlock;
 	public static Block whiteBlock;
@@ -36,6 +50,23 @@ public class TenchyCraft {
 		
 		shinyIngot = new GemItems(703).setUnlocalizedName("shinyIngot");
 		LanguageRegistry.addName(shinyIngot, "Shiny Ingot");
+	}
+	
+	public static void loaderTools() {
+		shinyPickaxe = new ShinyPickaxe(901, shiny).setUnlocalizedName("shinyPickaxe");
+		LanguageRegistry.addName(shinyPickaxe, "Shiny Pickaxe");
+		
+		shinyShovel = new ShinyShovel(902, shiny).setUnlocalizedName("shinyShovel");
+		LanguageRegistry.addName(shinyShovel, "Shiny Shovel");
+		
+		shinyAxe = new ShinyAxe(903, shiny).setUnlocalizedName("shinyAxe");
+		LanguageRegistry.addName(shinyAxe, "Shiny Axe");
+		
+		shinySword = new ShinySword(904, shiny).setUnlocalizedName("shinySword");
+		LanguageRegistry.addName(shinySword, "Shiny Sword");
+		
+		shinyHoe = new ShinyHoe(905, shiny).setUnlocalizedName("shinyHoe");
+		LanguageRegistry.addName(shinyHoe, "Shiny Hoe");
 	}
 	
 	public static void loaderBlock() {
@@ -68,6 +99,7 @@ public class TenchyCraft {
 		loaderItem();
 		loaderBlock();
 		loaderCrafting();
+		loaderTools();
 	}
 	
 }

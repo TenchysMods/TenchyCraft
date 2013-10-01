@@ -13,6 +13,6 @@ public class TabTCGems extends CreativeTabs {
 		return me.TenchysMods.TenchyCraft.TenchyCraft.blueDiamond.itemID;
 	}
 	public String getTranslatedTabLabel() {
-		return "TenchyCraft Gems";
+		return "TenchyCraft";
 	}
 }
