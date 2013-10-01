@@ -22,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = "tenchycraft2", name = "TenchyCraft", version = "pre02a")
+@Mod(modid = "tenchycraft2", name = "TenchyCraft", version = "pre02b")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class TenchyCraft {
 	
@@ -86,6 +86,11 @@ public class TenchyCraft {
 		GameRegistry.addRecipe(new ItemStack(shinyIngot, 1), new Object[]{"iii", "ddd", "iii", 'i', Item.ingotIron, 'd', blueDiamondBlock});
 		GameRegistry.addRecipe(new ItemStack(blueDiamond, 1), new Object[]{"sss", "sds", "sss", 's', blueStone, 'd', Item.diamond});
 		GameRegistry.addRecipe(new ItemStack(whiteBlock, 1), new Object[]{"did", "www", "sss", 's', Block.stone, 'w', Block.blockNetherQuartz, 'd', blueDiamond, 'i', Item.ingotIron});
+		GameRegistry.addRecipe(new ItemStack(shinyPickaxe, 1), new Object[]{"iii", " s ", " s ", 's', Item.stick, 'i', shinyIngot});
+		GameRegistry.addRecipe(new ItemStack(shinyShovel, 1), new Object[]{" i ", " s ", " s ", 'i', shinyIngot, 's', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shinyAxe, 1), new Object[]{" ii", " si", " s ", 'i', shinyIngot, 's', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shinySword, 1), new Object[]{" i ", " i ", " s ", 'i', shinyIngot, 's', Item.stick});
+		GameRegistry.addRecipe(new ItemStack(shinyHoe, 1), new Object[]{" ii", " s ", " s ", 'i', shinyIngot, 's', Item.stick});
 		GameRegistry.addShapelessRecipe(new ItemStack(blueStone, 2), new Object[]{Item.redstone, Block.ice});
 	}
 	

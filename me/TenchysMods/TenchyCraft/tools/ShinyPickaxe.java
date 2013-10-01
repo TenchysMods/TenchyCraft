@@ -8,5 +8,6 @@ public class ShinyPickaxe extends ItemPickaxe {
 	public ShinyPickaxe(int ItemID, EnumToolMaterial mat) {
 		super(ItemID, mat);
 		setCreativeTab(TenchyCraft.tabTCGems);
+		setMaxStackSize(1);
 	}
 }

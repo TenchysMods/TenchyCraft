@@ -8,5 +8,6 @@ public class ShinyShovel extends ItemSpade {
 	public ShinyShovel(int ItemID, EnumToolMaterial mat) {
 		super(ItemID, mat);
 		setCreativeTab(TenchyCraft.tabTCGems);
+		setMaxStackSize(1);
 	}
 }

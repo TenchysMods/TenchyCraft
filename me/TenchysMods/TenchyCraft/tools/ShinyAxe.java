@@ -8,5 +8,6 @@ public class ShinyAxe extends ItemAxe {
 	public ShinyAxe(int ItemID, EnumToolMaterial mat) {
 		super(ItemID, mat);
 		setCreativeTab(TenchyCraft.tabTCGems);
+		setMaxStackSize(1);
 	}
 }

@@ -8,5 +8,6 @@ public class ShinySword extends ItemSword {
 	public ShinySword(int ItemID, EnumToolMaterial mat) {
 		super(ItemID, mat);
 		setCreativeTab(TenchyCraft.tabTCGems);
+		setMaxStackSize(1);
 	}
 }

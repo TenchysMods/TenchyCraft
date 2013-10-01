@@ -8,5 +8,6 @@ public class ShinyHoe extends ItemHoe {
 	public ShinyHoe(int ItemID, EnumToolMaterial mat) {
 		super(ItemID, mat);
 		setCreativeTab(TenchyCraft.tabTCGems);
+		setMaxStackSize(1);
 	}
 }
