@@ -28,10 +28,12 @@ public class TenchyCraft {
 	
 	static EnumToolMaterial shiny = net.minecraftforge.common.EnumHelper.addToolMaterial("HighPower", 2, 9000, 9.0F, 6, 15);
 	
+	// Item Decleration
 	public static Item blueDiamond;
 	public static Item blueStone;
 	public static Item shinyIngot;
 	
+	// Tool Decleration.
 	public static Item shinyPickaxe;
 	public static Item shinyShovel;
 	public static Item shinyAxe;
